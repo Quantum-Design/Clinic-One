@@ -11,13 +11,24 @@ ModelImporter:
     400004: //RootNode
     2100000: 'Material #48'
     2100002: No Name
+    2100004: 'Material #49'
     2300000: Door
     2300002: Wall
     3300000: Door
     3300002: Wall
     4300000: Door
     4300002: Wall
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: kkinney_DoorUVPainted_5Feb19
+    second: {fileID: 2800000, guid: 66d77ca58f52544469e1223cfd98ee00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: kkinney_WallFrameUVPainted_7Feb19
+    second: {fileID: 2800000, guid: c7b44e713dbe2a24bb0ec455e1606c38, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
