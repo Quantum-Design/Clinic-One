@@ -14,7 +14,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: MetalTile
-    second: {fileID: 2800000, guid: 674cef0abfd72f64f8c9fb01675662c0, type: 3}
+    second: {fileID: 2800000, guid: 8299bc5819e78fd44906a7531670b97a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
