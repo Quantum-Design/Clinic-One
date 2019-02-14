@@ -54,10 +54,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         //Fall Death/Respawn
-        if (transform.position.y < -10)
+        /*if (transform.position.y < -10)
         {
             transform.position = startCoord;
-        }
+        }*/
     }
 
     void Move(float moveX, float moveZ)

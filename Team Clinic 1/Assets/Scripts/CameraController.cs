@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
     public float angleModX = 20;
     public float angleModY = 20;
     public float maxViewAngle = 4.5f;
-    public float minViewAngle = -4.5f;
+    public float minViewAngle = 4.5f;
 
     private Vector3 offset;
     private float xPos;
@@ -25,7 +25,8 @@ public class CameraController : MonoBehaviour {
     private void Update()
     {
         transform.position = player.transform.position + offset;
-        transform.RotateAround(point: player.transform.position, axis: Vector3.up, angle: angleModX * Input.GetAxis("Mouse X"));
+        transform.Rotate(0, angleModX * Input.GetAxis("Mouse X"), 0, Space.World);
+        //transform.RotateAround(point: player.transform.position, axis: Vector3.up, angle: angleModX * Input.GetAxis("Mouse X"));
 
         inputY = Input.GetAxis("Mouse Y");
 
@@ -34,7 +35,8 @@ public class CameraController : MonoBehaviour {
             // We want to go backwards if true
             if(inputY < 0)
             {
-                transform.RotateAround(point: player.transform.position, axis: transform.TransformVector(Vector3.left), angle: angleModY * inputY);
+                transform.Rotate(angleModY * inputY, 0, 0);
+                //transform.RotateAround(point: player.transform.position, axis: transform.TransformVector(Vector3.left), angle: angleModY * inputY);
                 viewY += inputY;
             }
         }
@@ -43,7 +45,8 @@ public class CameraController : MonoBehaviour {
             // We want to go upwards if true
             if (inputY > 0)
             {
-                transform.RotateAround(point: player.transform.position, axis: transform.TransformVector(Vector3.left), angle: angleModY * inputY);
+                transform.Rotate(angleModY * inputY, 0, 0);
+                //transform.RotateAround(point: player.transform.position, axis: transform.TransformVector(Vector3.left), angle: angleModY * inputY);
                 viewY += inputY;
             }
         }
