@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
+    public GameObject[] spawnPoints;
+    public GameObject enemy;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +16,12 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SpawnEnemies()
+    {
+        foreach(GameObject spawnPoint in spawnPoints)
+        {
+            Instantiate(enemy, spawnPoint.transform);
+        }
+    }
 }
