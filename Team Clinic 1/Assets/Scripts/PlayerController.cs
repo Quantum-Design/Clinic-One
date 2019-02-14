@@ -38,21 +38,6 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
         Move(moveHorizontal * Time.fixedDeltaTime, moveVertical * Time.fixedDeltaTime);
 
-        //Jumping Mechanic
-        if (Input.GetButtonDown(buttonName: "Jump") && !isJumping)
-        {
-            Jump();
-        }
-
-        if (rb.velocity.y < 0)
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1);
-        }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1);
-        }
-
         //Fall Death/Respawn
         /*if (transform.position.y < -10)
         {
@@ -67,19 +52,4 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
         //rb.AddForce(targetVelocity * speed);
     }
-
-    void Jump()
-    {
-        rb.AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
-        isJumping = true;
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-        }
-    }
-
 }
